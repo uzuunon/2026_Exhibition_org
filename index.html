@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -18,272 +19,276 @@
     --shadow-hover: 0 6px 24px rgba(0,0,0,0.13);
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+- { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background: var(--bg);
-    color: var(--dark);
-    min-height: 100vh;
-    padding: 48px 16px 64px;
-  }
+body {
+font-family: ‘Noto Sans KR’, sans-serif;
+background: var(–bg);
+color: var(–dark);
+min-height: 100vh;
+padding: 48px 16px 64px;
+}
 
-  /* ── HEADER ── */
-  header {
-    text-align: center;
-    margin-bottom: 48px;
-    animation: fadeDown 0.6s ease both;
-  }
-  header .eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 8px;
-  }
-  header h1 {
-    font-size: clamp(18px, 4vw, 24px);
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    color: var(--dark);
-  }
+/* ── HEADER ── */
+header {
+text-align: center;
+margin-bottom: 48px;
+animation: fadeDown 0.6s ease both;
+}
+header .eyebrow {
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(–red);
+margin-bottom: 8px;
+}
+header h1 {
+font-size: clamp(18px, 4vw, 24px);
+font-weight: 900;
+letter-spacing: -0.03em;
+color: var(–dark);
+}
 
-  /* ── TREE ── */
-  .tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+/* ── TREE ── */
+.tree {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
-  .v-line {
-    width: 2px;
-    background: var(--border);
-    flex-shrink: 0;
-  }
+.v-line {
+width: 2px;
+background: var(–border);
+flex-shrink: 0;
+}
 
-  /* ── BOXES ── */
-  .box {
-    background: var(--white);
-    border: 1.5px solid var(--border);
-    border-radius: 999px;
-    padding: 12px 28px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: box-shadow 0.25s, transform 0.25s;
-    cursor: default;
-    min-width: 120px;
-    width: max-content;
-    max-width: 90vw;
-  }
-  .box:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+/* ── BOXES ── */
+.box {
+background: var(–white);
+border: 1.5px solid var(–border);
+border-radius: 999px;
+padding: 12px 28px;
+text-align: center;
+box-shadow: var(–shadow);
+transition: box-shadow 0.25s, transform 0.25s;
+cursor: default;
+min-width: 120px;
+width: max-content;
+max-width: 90vw;
+}
+.box:hover { box-shadow: var(–shadow-hover); transform: translateY(-2px); }
 
-  .box .title {
-    font-size: clamp(12px, 2.5vw, 14px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.3;
-  }
-  .box .desc {
-    font-size: clamp(10px, 2vw, 11px);
-    color: var(--light);
-    margin-top: 4px;
-    line-height: 1.6;
-    font-weight: 400;
-  }
+.box .title {
+font-size: clamp(12px, 2.5vw, 14px);
+font-weight: 700;
+letter-spacing: -0.01em;
+line-height: 1.3;
+}
+.box .desc {
+font-size: clamp(10px, 2vw, 11px);
+color: var(–light);
+margin-top: 4px;
+line-height: 1.6;
+font-weight: 400;
+}
 
-  .box.chairman {
-    background: var(--dark);
-    border-color: var(--dark);
-    padding: 14px 40px;
-    border-radius: 999px;
-  }
-  .box.chairman .title { color: #fff; font-size: clamp(14px, 3vw, 16px); font-weight: 900; }
-  .box.chairman .desc { color: rgba(255,255,255,0.9); }
+.box.chairman {
+background: var(–dark);
+border-color: var(–dark);
+padding: 14px 40px;
+border-radius: 999px;
+}
+.box.chairman .title { color: #fff; font-size: clamp(14px, 3vw, 16px); font-weight: 900; }
+.box.chairman .desc { color: rgba(255,255,255,0.9); }
 
-  .box.exec {
-    background: var(--red);
-    border-color: var(--red);
-  }
-  .box.exec .title { color: #fff; }
-  .box.exec .desc { color: rgba(255,255,255,0.75); }
+.box.exec {
+background: var(–red);
+border-color: var(–red);
+}
+.box.exec .title { color: #fff; }
+.box.exec .desc { color: rgba(255,255,255,0.75); }
 
-  .box.account {
-    border-color: var(--red);
-  }
-  .box.account .title { color: var(--red); }
+.box.account {
+border-color: var(–red);
+}
+.box.account .title { color: var(–red); }
 
-  /* ── MID ROW (집행부 + 회계부) ── */
-  .mid-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0;
-  }
+/* ── MID ROW (집행부 + 회계부) ── */
+.mid-row {
+display: flex;
+align-items: flex-start;
+justify-content: center;
+flex-wrap: wrap;
+gap: 0;
+}
 
-  .mid-exec, .mid-account {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.mid-exec, .mid-account {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
-  .h-bridge {
-    height: 2px;
-    background: var(--border);
-    width: 32px;
-    margin-top: 22px;
-    flex-shrink: 0;
-  }
+.h-bridge {
+height: 2px;
+background: var(–border);
+width: 32px;
+margin-top: 22px;
+flex-shrink: 0;
+}
 
-  /* ── TEAMS SECTION ── */
-  .teams-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
+/* ── TEAMS SECTION ── */
+.teams-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
 
-  /* horizontal spanning line — JS sets width dynamically */
-  .h-line-row {
-    height: 2px;
-    background: var(--border);
-    width: var(--hline-width, 80%);
-    max-width: 700px;
-    transition: width 0.2s;
-  }
+/* horizontal spanning line — JS sets width dynamically */
+.h-line-row {
+height: 2px;
+background: var(–border);
+width: var(–hline-width, 80%);
+max-width: 700px;
+transition: width 0.2s;
+}
 
-  .teams-row {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 760px;
-    gap: clamp(8px, 2vw, 20px);
-    padding: 0 8px;
-  }
+.teams-row {
+display: flex;
+justify-content: center;
+width: 100%;
+max-width: 760px;
+gap: clamp(8px, 2vw, 20px);
+padding: 0 8px;
+}
 
-  .team-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    min-width: 0;
-    animation: fadeUp 0.5s ease both;
-  }
+.team-col {
+display: flex;
+flex-direction: column;
+align-items: center;
+flex: 1;
+min-width: 0;
+animation: fadeUp 0.5s ease both;
+}
 
-  .box.team-head {
-    background: var(--dark);
-    border-color: var(--dark);
-    width: 100%;
-    min-width: 0;
-    padding: 11px 16px; border-radius: 999px;
-  }
-  .box.team-head .title {
-    color: #fff;
-    font-size: clamp(11px, 2.2vw, 13px);
-    white-space: nowrap;
-  }
-  .box.team-head .sub-label {
-    font-size: clamp(8px, 1.6vw, 10px);
-    color: rgba(255,255,255,0.45);
-    margin-top: 2px;
-    letter-spacing: 0.04em;
-  }
+.box.team-head {
+background: var(–dark);
+border-color: var(–dark);
+width: 100%;
+min-width: 0;
+padding: 11px 16px; border-radius: 999px;
+}
+.box.team-head .title {
+color: #fff;
+font-size: clamp(11px, 2.2vw, 13px);
+white-space: nowrap;
+}
+.box.team-head .sub-label {
+font-size: clamp(8px, 1.6vw, 10px);
+color: rgba(255,255,255,0.45);
+margin-top: 2px;
+letter-spacing: 0.04em;
+}
 
-  .members-card {
-    background: var(--white);
-    border: 1.5px solid var(--border);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    padding: 10px 6px;
-    width: 100%;
-    display: flex;
-    gap: 6px;
-    transition: box-shadow 0.2s;
-  }
-  .members-card:hover { box-shadow: var(--shadow-hover); }
+.members-card {
+background: var(–white);
+border: 1.5px solid var(–border);
+border-radius: 20px;
+box-shadow: var(–shadow);
+padding: 10px 6px;
+width: 100%;
+display: flex;
+gap: 6px;
+transition: box-shadow 0.2s;
+}
+.members-card:hover { box-shadow: var(–shadow-hover); }
 
-  .m-col { flex: 1; text-align: center; min-width: 0; }
-  .m-col .col-label {
-    font-size: clamp(8px, 1.8vw, 10px);
-    font-weight: 700;
-    color: var(--light);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding-bottom: 5px;
-    border-bottom: 1.5px solid var(--border);
-    margin-bottom: 4px;
-    white-space: nowrap;
-  }
-  .m-col .name {
-    font-size: 12px;
-    color: var(--mid);
-    line-height: 1.85;
-    font-weight: 400;
-  }
+.m-col { flex: 1; text-align: center; min-width: 0; }
+.m-col .col-label {
+font-size: clamp(8px, 1.8vw, 10px);
+font-weight: 700;
+color: var(–light);
+letter-spacing: 0.05em;
+text-transform: uppercase;
+padding-bottom: 5px;
+border-bottom: 1.5px solid var(–border);
+margin-bottom: 4px;
+white-space: nowrap;
+}
+.m-col .name {
+font-size: 11px;
+color: var(–mid);
+line-height: 1.85;
+font-weight: 400;
+}
 
-  /* ── MOBILE: stack teams vertically ── */
-  @media (max-width: 520px) {
-    body { padding: 36px 12px 52px; }
+/* ── MOBILE: stack teams vertically ── */
+@media (max-width: 520px) {
+body { padding: 36px 12px 52px; }
 
-    .mid-row { gap: 0; }
-    .h-bridge { width: 20px; }
+```
+.mid-row { gap: 0; }
+.h-bridge { width: 20px; }
 
-    .h-line-row { display: none; }
+.h-line-row { display: none; }
 
-    .teams-row {
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      width: 100%;
-      max-width: 320px;
-    }
+.teams-row {
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 320px;
+}
 
-    .team-col {
-      width: 100%;
-      max-width: 300px;
-    }
+.team-col {
+  width: 100%;
+  max-width: 300px;
+}
 
-    /* replace horizontal top line with vertical connector between teams */
-    .team-col:not(:first-child) .v-line-top {
-      height: 20px;
-    }
-    .team-col .v-line { display: flex; }
-    .team-col .v-line.top-line { height: 20px !important; }
+/* replace horizontal top line with vertical connector between teams */
+.team-col:not(:first-child) .v-line-top {
+  height: 20px;
+}
+.team-col .v-line { display: flex; }
+.team-col .v-line.top-line { height: 20px !important; }
 
-    .box.team-head { padding: 10px 16px; }
-    .box.team-head .title { font-size: 13px; white-space: normal; }
+.box.team-head { padding: 10px 16px; }
+.box.team-head .title { font-size: 13px; white-space: normal; }
 
-    /* hide h-line between teams on mobile, show single vertical */
-    .teams-row .team-col:not(:first-child)::before {
-      content: '';
-      width: 2px;
-      height: 20px;
-      background: var(--border);
-      display: block;
-    }
-  }
+/* hide h-line between teams on mobile, show single vertical */
+.teams-row .team-col:not(:first-child)::before {
+  content: '';
+  width: 2px;
+  height: 20px;
+  background: var(--border);
+  display: block;
+}
+```
 
-  /* ── TABLET ── */
-  @media (min-width: 521px) and (max-width: 720px) {
-    .teams-row { max-width: 600px; gap: 10px; }
-    .box.team-head .title { font-size: 12px; }
-  }
+}
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+/* ── TABLET ── */
+@media (min-width: 521px) and (max-width: 720px) {
+.teams-row { max-width: 600px; gap: 10px; }
+.box.team-head .title { font-size: 12px; }
+}
 
-  .team-col:nth-child(1) { animation-delay: 0.15s; }
-  .team-col:nth-child(2) { animation-delay: 0.28s; }
-  .team-col:nth-child(3) { animation-delay: 0.41s; }
+/* ── ANIMATIONS ── */
+@keyframes fadeDown {
+from { opacity: 0; transform: translateY(-14px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(12px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+.team-col:nth-child(1) { animation-delay: 0.15s; }
+.team-col:nth-child(2) { animation-delay: 0.28s; }
+.team-col:nth-child(3) { animation-delay: 0.41s; }
 </style>
+
 </head>
 <body>
 
@@ -295,6 +300,7 @@
 <div class="tree">
 
   <!-- 위원장 -->
+
   <div class="box chairman" style="animation: fadeDown 0.5s ease both;">
     <div class="title">위원장</div>
     <div class="desc">회의 · 조정</div>
@@ -305,6 +311,7 @@
   <div class="v-line" style="height:32px;"></div>
 
   <!-- 집행부 + 회계부 -->
+
   <div class="mid-row" style="animation: fadeUp 0.5s 0.1s ease both;">
     <div class="mid-exec">
       <div class="box exec">
@@ -324,71 +331,75 @@
   <div class="v-line" style="height:32px;"></div>
 
   <!-- 3 teams -->
+
   <div class="teams-section">
     <div class="h-line-row" id="hline"></div>
     <div class="teams-row" id="teamsRow">
 
-      <!-- 디자인팀 -->
-      <div class="team-col">
-        <div class="v-line" style="height:20px;"></div>
-        <div class="box team-head">
-          <div class="title">디자인팀</div>
-          <div class="sub-label">Design Team</div>
-        </div>
-        <div class="v-line" style="height:12px;"></div>
-        <div class="members-card">
-          <div class="m-col">
-            <div class="col-label">공간</div>
-            <div class="name">김준희<br>이유경<br>주예성<br>정서희<br>최다은<br>박선민</div>
-          </div>
-          <div class="m-col">
-            <div class="col-label">건축</div>
-            <div class="name" style="color:var(--light); font-style:italic;">미정</div>
-          </div>
-        </div>
+```
+  <!-- 디자인팀 -->
+  <div class="team-col">
+    <div class="v-line" style="height:20px;"></div>
+    <div class="box team-head">
+      <div class="title">디자인팀</div>
+      <div class="sub-label">Design Team</div>
+    </div>
+    <div class="v-line" style="height:12px;"></div>
+    <div class="members-card">
+      <div class="m-col">
+        <div class="col-label">공간</div>
+        <div class="name">김준희<br>이유경<br>주예성<br>정서희<br>최다은<br>박선민</div>
       </div>
-
-      <!-- 전시팀 -->
-      <div class="team-col">
-        <div class="v-line" style="height:20px;"></div>
-        <div class="box team-head">
-          <div class="title">전시팀</div>
-          <div class="sub-label">Exhibition Team</div>
-        </div>
-        <div class="v-line" style="height:12px;"></div>
-        <div class="members-card">
-          <div class="m-col">
-            <div class="col-label">공간</div>
-            <div class="name">배민주<br>강문주<br>도지인<br>박령빈<br>김이진<br>임민영<br>장이윤</div>
-          </div>
-          <div class="m-col">
-            <div class="col-label">건축</div>
-            <div class="name" style="color:var(--light); font-style:italic;">미정</div>
-          </div>
-        </div>
+      <div class="m-col">
+        <div class="col-label">건축</div>
+        <div class="name">김예인<br>조화연<br>이다현</div>
       </div>
+    </div>
+  </div>
 
-      <!-- 온라인팀 -->
-      <div class="team-col">
-        <div class="v-line" style="height:20px;"></div>
-        <div class="box team-head">
-          <div class="title">온라인팀</div>
-          <div class="sub-label">Online Team</div>
-        </div>
-        <div class="v-line" style="height:12px;"></div>
-        <div class="members-card">
-          <div class="m-col">
-            <div class="col-label">공간</div>
-            <div class="name">조호진<br>박서연<br>김보임<br>이의진<br>윤지현<br>임세연</div>
-          </div>
-          <div class="m-col">
-            <div class="col-label">건축</div>
-            <div class="name" style="color:var(--light); font-style:italic;">미정</div>
-          </div>
-        </div>
+  <!-- 전시팀 -->
+  <div class="team-col">
+    <div class="v-line" style="height:20px;"></div>
+    <div class="box team-head">
+      <div class="title">전시팀</div>
+      <div class="sub-label">Exhibition Team</div>
+    </div>
+    <div class="v-line" style="height:12px;"></div>
+    <div class="members-card">
+      <div class="m-col">
+        <div class="col-label">공간</div>
+        <div class="name">배민주<br>강문주<br>도지인<br>박령빈<br>김이진<br>임민영<br>장이윤</div>
       </div>
+      <div class="m-col">
+        <div class="col-label">건축</div>
+        <div class="name">정의영<br>안혜원<br>김현지</div>
+      </div>
+    </div>
+  </div>
 
-    </div><!-- .teams-row -->
+  <!-- 온라인팀 -->
+  <div class="team-col">
+    <div class="v-line" style="height:20px;"></div>
+    <div class="box team-head">
+      <div class="title">온라인팀</div>
+      <div class="sub-label">Online Team</div>
+    </div>
+    <div class="v-line" style="height:12px;"></div>
+    <div class="members-card">
+      <div class="m-col">
+        <div class="col-label">공간</div>
+        <div class="name">조호진<br>박서연<br>김보임<br>이의진<br>윤지현<br>임세연</div>
+      </div>
+      <div class="m-col">
+        <div class="col-label">건축</div>
+        <div class="name">이정민<br>이유안<br>정예원</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- .teams-row -->
+```
+
   </div>
 
 </div><!-- .tree -->
