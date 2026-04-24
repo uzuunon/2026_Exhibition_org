@@ -4,423 +4,355 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>졸업전시위원회 조직도</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red: #D63030;
-    --dark: #111111;
-    --mid: #555;
-    --light: #888;
-    --border: #D8D8D8;
-    --bg: #FFFFFF;
-    --white: #FFFFFF;
-    --shadow: 0 2px 10px rgba(0,0,0,0.07);
-    --shadow-hover: 0 6px 24px rgba(0,0,0,0.13);
+    --blue: #2563EB;
+    --navy: #1a3a5c;
+    --dark: #0f172a;
+    --mid: #475569;
+    --light: #94a3b8;
+    --border: #e2e8f0;
+    --conn: #cbd5e1;
+    --bg: #ffffff;
+    --white: #ffffff;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background: var(--bg);
     color: var(--dark);
     min-height: 100vh;
-    padding: 52px 20px 72px;
+    padding: 40px 16px 80px;
   }
 
-  header {
-    text-align: center;
-    margin-bottom: 56px;
-    animation: fadeDown 0.6s ease both;
-  }
-  header .eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 8px;
-  }
-  header h1 {
-    font-size: clamp(18px, 4vw, 24px);
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    color: var(--dark);
-  }
+  header { margin-bottom: 40px; text-align: center; }
+  header h1 { font-size: clamp(18px,5vw,26px); font-weight:700; letter-spacing:-0.03em; margin-bottom:4px; }
+  header p  { font-size:12px; color:var(--light); }
 
-  .tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .v-line {
-    width: 2px;
-    background: var(--border);
-    flex-shrink: 0;
-  }
-
-  /* ── BOXES ── */
-  .box {
-    background: var(--white);
-    border: 1.5px solid var(--border);
-    border-radius: 999px;
-    padding: 12px 28px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: box-shadow 0.25s, transform 0.25s;
-    cursor: default;
-    min-width: 120px;
-    width: max-content;
-    max-width: 90vw;
-  }
-  .box:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-
-  .box .title {
-    font-size: clamp(12px, 2.5vw, 14px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.3;
-  }
-  .box .desc {
-    font-size: clamp(10px, 2vw, 11px);
-    color: var(--light);
-    margin-top: 4px;
-    line-height: 1.6;
-    font-weight: 400;
-  }
-
-  .box.chairman {
-    background: var(--dark);
-    border-color: var(--dark);
-    padding: 14px 40px;
-    border-radius: 999px;
-  }
-  .box.chairman .title { color: #fff; font-size: clamp(14px, 3vw, 16px); font-weight: 900; }
-  .box.chairman .desc { color: rgba(255,255,255,0.5); }
-
-  .box.exec {
-    background: var(--red);
-    border-color: var(--red);
-  }
-  .box.exec .title { color: #fff; }
-  .box.exec .desc { color: rgba(255,255,255,0.75); }
-
-  .box.account {
-    border-color: var(--red);
-  }
-  .box.account .title { color: var(--red); }
-
-  /* ── MID ROW ── */
-  .mid-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0;
-  }
-  .h-bridge {
-    height: 2px;
-    background: var(--border);
-    width: 32px;
-    margin-top: 22px;
-    flex-shrink: 0;
-  }
-
-  /* ── TEAMS SECTION ── */
-  .teams-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .h-line-row {
-    height: 2px;
-    background: var(--border);
-  }
-  .teams-row {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 760px;
-    gap: clamp(8px, 2vw, 20px);
-    padding: 0 8px;
-  }
-
-  .team-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    animation: fadeUp 0.5s ease both;
-  }
-
-  .box.team-head {
-    background: var(--dark);
-    border-color: var(--dark);
-    width: 100%;
-    min-width: 0;
-    padding: 11px 16px;
-    border-radius: 999px;
-  }
-  .box.team-head .title { color: #fff; font-size: clamp(11px, 2.2vw, 13px); white-space: nowrap; }
-  .box.team-head .sub-label {
-    font-size: clamp(8px, 1.6vw, 10px);
-    color: rgba(255,255,255,0.45);
-    margin-top: 2px;
-    letter-spacing: 0.04em;
-  }
-
-  /* ── LEADER ROW ── */
-  .leader-row {
-    display: flex;
-    gap: 6px;
-    width: 100%;
-    background: rgba(26,58,92,0.05);
-    border: 1.5px solid rgba(26,58,92,0.18);
-    border-radius: 999px;
-    padding: 6px 8px;
-    margin-bottom: 4px;
-  }
-  .leader-row .m-col .col-label { border-bottom-color: rgba(26,58,92,0.2); }
-
-  /* ── MEMBERS CARD ── */
-  .members-card {
-    background: var(--white);
-    border: 1.5px solid var(--border);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    padding: 10px 8px;
-    width: 100%;
-    display: flex;
-    gap: 6px;
-    transition: box-shadow 0.2s;
-  }
-  .members-card:hover { box-shadow: var(--shadow-hover); }
-
-  .m-col { flex: 1; text-align: center; min-width: 0; }
-  .m-col .col-label {
-    font-size: clamp(8px, 1.8vw, 10px);
-    font-weight: 700;
-    color: var(--light);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding-bottom: 5px;
-    border-bottom: 1.5px solid var(--border);
-    margin-bottom: 4px;
+  /* ── NODE ── */
+  .nd {
+    border-radius: 7px;
+    padding: 9px 18px;
+    font-size: clamp(11px,2.5vw,13px);
+    font-weight: 600;
     white-space: nowrap;
+    cursor: default;
+    user-select: none;
+    transition: filter .2s, transform .15s;
+    display: inline-block;
   }
-  .m-col .leader {
-    font-size: 11px;
-    font-weight: 700;
-    color: #1a3a5c;
-    line-height: 1.85;
+  .nd:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+  .nd-root {
+    background: var(--dark); color: #fff;
+    font-weight: 700; padding: 11px 24px; border-radius: 8px;
   }
-  .m-col .name {
-    font-size: 11px;
-    color: var(--mid);
-    line-height: 1.85;
-    font-weight: 400;
+  .nd-root .sub { display:block; font-size:10px; font-weight:400; opacity:.65; margin-top:3px; line-height:1.6; white-space:normal; }
+
+  .nd-blue { background: var(--blue); color: #fff; border-radius: 7px; min-width: 120px; text-align: center; padding: 7px 14px; font-size: clamp(10px, 2.2vw, 12px); }
+  .nd-blue .sub { display:block; font-size:10px; font-weight:400; opacity:.78; margin-top:2px; white-space:normal; }
+
+  .nd-navy { background: var(--navy); color: #fff; border-radius: 7px; font-size:11px; padding: 7px 14px; text-align:center; }
+  .nd-navy span { display:block; font-family:'DM Mono',monospace; font-weight:400; font-size:11px; margin-top:1px; }
+
+  .nd-navy-outline {
+    background: var(--white); color: var(--navy);
+    border: 1.5px solid var(--navy); border-radius: 7px;
+  }
+  .nd-navy-outline .sub { display:block; font-size:10px; color:var(--mid); font-weight:400; margin-top:2px; }
+
+  .nd-member {
+    background: var(--white); color: var(--mid);
+    border: 1.5px solid var(--border);
+    padding: 7px 20px; border-radius: 7px;
+    font-size: clamp(10px,2vw,12px);
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    white-space: nowrap;
+    min-width: 80px;
+    text-align: center;
   }
 
-  /* ── MOBILE ── */
-  @media (max-width: 520px) {
-    body { padding: 36px 12px 52px; }
-    .h-bridge { width: 20px; }
-    .h-line-row { display: none; }
-    .teams-row {
+  /* ── CONNECTORS ── */
+  .vline { width:2px; background:var(--conn); margin:0 auto; flex-shrink:0; }
+  .hline { height:2px; background:var(--conn); flex-shrink:0; }
+
+  /* ── LAYOUT ── */
+  .tree {
+    display: flex; flex-direction: column; align-items: center;
+    animation: fadeIn .5s ease both;
+    position: relative; z-index:1;
+  }
+
+  .level {
+    display: flex; flex-direction: row;
+    justify-content: center; align-items: flex-start;
+    gap: clamp(10px,3vw,40px);
+    width: 100%;
+  }
+
+  .branch { display:flex; flex-direction:column; align-items:center; }
+
+  .team-inner {
+    display: flex; flex-direction: row;
+    justify-content: center;
+    gap: clamp(6px,2vw,20px);
+  }
+  .leader-branch { display:flex; flex-direction:column; align-items:center; }
+  .members-col { display:flex; flex-direction:column; align-items:center; gap:4px; }
+
+  /* chart wrapper for SVG */
+  .chart-wrap { position:relative; width:100%; max-width:900px; margin:0 auto; }
+  svg.conn { position:absolute; top:0; left:0; pointer-events:none; overflow:visible; z-index:0; }
+
+  /* ── MOBILE: collapse to vertical scroll ── */
+  @media (max-width: 600px) {
+    .level { gap: 8px; }
+    .team-inner { gap: 8px; }
+    .nd { font-size: 11px; padding: 7px 12px; }
+    .nd-root { padding: 10px 16px; }
+    .nd-navy { font-size: 10px; padding: 6px 10px; }
+    .nd-member { font-size: 10px; padding: 5px 8px; }
+  }
+
+  /* very small: stack teams vertically */
+  @media (max-width: 420px) {
+    .level#lv-teams {
       flex-direction: column;
       align-items: center;
       gap: 0;
-      width: 100%;
-      max-width: 320px;
     }
-    .team-col { width: 100%; max-width: 300px; }
-    .team-col:not(:first-child)::before {
+    .level#lv-teams .branch { width: 100%; max-width: 320px; }
+    .level#lv-teams .branch:not(:first-child)::before {
       content: '';
-      width: 2px;
-      height: 20px;
-      background: var(--border);
+      width: 2px; height: 20px;
+      background: var(--conn);
       display: block;
+      margin: 0 auto;
     }
+    .team-inner { gap: 12px; }
   }
 
-  @media (min-width: 521px) and (max-width: 720px) {
-    .teams-row { max-width: 600px; gap: 10px; }
-    .box.team-head .title { font-size: 12px; }
-  }
-
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .team-col:nth-child(1) { animation-delay: 0.15s; }
-  .team-col:nth-child(2) { animation-delay: 0.28s; }
-  .team-col:nth-child(3) { animation-delay: 0.41s; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
 </style>
 </head>
 <body>
 
 <header>
-  <p class="eyebrow">Graduation Exhibition Committee</p>
   <h1>졸업전시위원회 조직도</h1>
+  <p>2026 Graduation Exhibition Committee</p>
 </header>
 
-<div class="tree">
+<div class="chart-wrap" id="cw">
+  <svg class="conn" id="svg"></svg>
 
-  <!-- 위원장 -->
-  <div class="box chairman" style="animation: fadeDown 0.5s ease both;">
-    <div class="title">위원장</div>
-    <div class="desc">회의 · 조정</div>
-    <div class="desc" style="font-size:12px; color:rgba(255,255,255,0.9); margin-top:4px;">대표 김나현 · 김민채</div>
-    <div class="desc" style="font-size:12px; color:rgba(255,255,255,0.9); margin-top:2px;">부대표 김채원</div>
-  </div>
+  <div class="tree" id="tree">
 
-  <div class="v-line" style="height:32px;"></div>
+    <!-- 위원장 -->
+    <div class="nd nd-root" id="chairman">
+      위원장
+      <span class="sub">대표 김나현 · 김민채 &nbsp;|&nbsp; 부대표 김채원</span>
+    </div>
+    <div class="vline" style="height:24px;"></div>
 
-  <!-- 집행부 + 회계부 -->
-  <div class="mid-row" style="animation: fadeUp 0.5s 0.1s ease both;">
-    <div style="display:flex;flex-direction:column;align-items:center;">
-      <div class="box exec">
-        <div class="title">집행부</div>
-        <div class="desc">각 부서 팀장으로 구성<br>회의·조정 내용 각 부서 전달</div>
+    <!-- 집행부 + 회계부 -->
+    <div class="level" id="lv-top">
+      <div class="branch">
+        <div class="nd nd-blue" id="exec" style="padding:9px 18px; font-size:clamp(11px,2.5vw,13px);">
+          집행부
+          <span class="sub">각 부서 팀장으로 구성 · 내용 전달</span>
+        </div>
+      </div>
+      <div class="branch">
+        <div class="nd nd-navy-outline" id="account">
+          회계부
+          <span class="sub">이채빈 · 이현정</span>
+        </div>
       </div>
     </div>
-    <div class="h-bridge"></div>
-    <div style="display:flex;flex-direction:column;align-items:center;">
-      <div class="box account">
-        <div class="title">회계부</div>
-        <div class="desc">이채빈 · 이현정</div>
-      </div>
-    </div>
-  </div>
+    <div class="vline" style="height:24px;"></div>
 
-  <div class="v-line" style="height:32px;"></div>
-
-  <!-- 3 teams -->
-  <div class="teams-section">
-    <div class="h-line-row" id="hline"></div>
-    <div class="teams-row" id="teamsRow">
+    <!-- 3 teams -->
+    <div class="level" id="lv-teams">
 
       <!-- 디자인팀 -->
-      <div class="team-col">
-        <div class="v-line" style="height:20px;"></div>
-        <div class="box team-head">
-          <div class="title">디자인팀</div>
-          <div class="sub-label">Design Team</div>
-        </div>
-        <div class="v-line" style="height:12px;"></div>
-        <div class="leader-row">
-          <div class="m-col">
-            <div class="col-label">공간 팀장</div>
-            <div class="leader">박선민</div>
+      <div class="branch" id="b-design">
+        <div class="nd nd-blue" id="n-design">디자인팀</div>
+        <div class="vline" style="height:16px;"></div>
+        <div class="team-inner">
+          <div class="leader-branch">
+            <div class="nd nd-navy" id="l-ds">공간 팀장<span>박선민</span></div>
+            <div class="vline" style="height:12px;"></div>
+            <div class="members-col" id="mc-ds">
+              <div class="nd nd-member">김준희</div>
+              <div class="nd nd-member">이유경</div>
+              <div class="nd nd-member">주예성</div>
+              <div class="nd nd-member">정서희</div>
+              <div class="nd nd-member">최다은</div>
+              <div class="nd nd-member">박선민</div>
+            </div>
           </div>
-          <div class="m-col">
-            <div class="col-label">건축 팀장</div>
-            <div class="leader">조화연</div>
-          </div>
-        </div>
-        <div class="members-card">
-          <div class="m-col">
-            <div class="col-label">공간</div>
-            <div class="name">김준희<br>이유경<br>주예성<br>정서희<br>최다은<br>박선민</div>
-          </div>
-          <div class="m-col">
-            <div class="col-label">건축</div>
-            <div class="name">김예인<br>조화연<br>이다현</div>
+          <div class="leader-branch">
+            <div class="nd nd-navy" id="l-da">건축 팀장<span>조화연</span></div>
+            <div class="vline" style="height:12px;"></div>
+            <div class="members-col" id="mc-da">
+              <div class="nd nd-member">김예인</div>
+              <div class="nd nd-member">조화연</div>
+              <div class="nd nd-member">이다현</div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 전시팀 -->
-      <div class="team-col">
-        <div class="v-line" style="height:20px;"></div>
-        <div class="box team-head">
-          <div class="title">전시팀</div>
-          <div class="sub-label">Exhibition Team</div>
-        </div>
-        <div class="v-line" style="height:12px;"></div>
-        <div class="leader-row">
-          <div class="m-col">
-            <div class="col-label">공간 팀장</div>
-            <div class="leader">박령빈</div>
+      <div class="branch" id="b-exh">
+        <div class="nd nd-blue" id="n-exh">전시팀</div>
+        <div class="vline" style="height:16px;"></div>
+        <div class="team-inner">
+          <div class="leader-branch">
+            <div class="nd nd-navy" id="l-es">공간 팀장<span>박령빈</span></div>
+            <div class="vline" style="height:12px;"></div>
+            <div class="members-col" id="mc-es">
+              <div class="nd nd-member">배민주</div>
+              <div class="nd nd-member">강문주</div>
+              <div class="nd nd-member">도지인</div>
+              <div class="nd nd-member">박령빈</div>
+              <div class="nd nd-member">김이진</div>
+              <div class="nd nd-member">임민영</div>
+              <div class="nd nd-member">장이윤</div>
+            </div>
           </div>
-          <div class="m-col">
-            <div class="col-label">건축 팀장</div>
-            <div class="leader">안혜원</div>
-          </div>
-        </div>
-        <div class="members-card">
-          <div class="m-col">
-            <div class="col-label">공간</div>
-            <div class="name">배민주<br>강문주<br>도지인<br>박령빈<br>김이진<br>임민영<br>장이윤</div>
-          </div>
-          <div class="m-col">
-            <div class="col-label">건축</div>
-            <div class="name">정의영<br>안혜원<br>김현지</div>
+          <div class="leader-branch">
+            <div class="nd nd-navy" id="l-ea">건축 팀장<span>안혜원</span></div>
+            <div class="vline" style="height:12px;"></div>
+            <div class="members-col" id="mc-ea">
+              <div class="nd nd-member">정의영</div>
+              <div class="nd nd-member">안혜원</div>
+              <div class="nd nd-member">김현지</div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 온라인팀 -->
-      <div class="team-col">
-        <div class="v-line" style="height:20px;"></div>
-        <div class="box team-head">
-          <div class="title">온라인팀</div>
-          <div class="sub-label">Online Team</div>
-        </div>
-        <div class="v-line" style="height:12px;"></div>
-        <div class="leader-row">
-          <div class="m-col">
-            <div class="col-label">공간 팀장</div>
-            <div class="leader">윤지현</div>
+      <div class="branch" id="b-onl">
+        <div class="nd nd-blue" id="n-onl">온라인팀</div>
+        <div class="vline" style="height:16px;"></div>
+        <div class="team-inner">
+          <div class="leader-branch">
+            <div class="nd nd-navy" id="l-os">공간 팀장<span>윤지현</span></div>
+            <div class="vline" style="height:12px;"></div>
+            <div class="members-col" id="mc-os">
+              <div class="nd nd-member">조호진</div>
+              <div class="nd nd-member">박서연</div>
+              <div class="nd nd-member">김보임</div>
+              <div class="nd nd-member">이의진</div>
+              <div class="nd nd-member">윤지현</div>
+              <div class="nd nd-member">임세연</div>
+            </div>
           </div>
-          <div class="m-col">
-            <div class="col-label">건축 팀장</div>
-            <div class="leader">이유안</div>
-          </div>
-        </div>
-        <div class="members-card">
-          <div class="m-col">
-            <div class="col-label">공간</div>
-            <div class="name">조호진<br>박서연<br>김보임<br>이의진<br>윤지현<br>임세연</div>
-          </div>
-          <div class="m-col">
-            <div class="col-label">건축</div>
-            <div class="name">이정민<br>이유안<br>정예원</div>
+          <div class="leader-branch">
+            <div class="nd nd-navy" id="l-oa">건축 팀장<span>이유안</span></div>
+            <div class="vline" style="height:12px;"></div>
+            <div class="members-col" id="mc-oa">
+              <div class="nd nd-member">이정민</div>
+              <div class="nd nd-member">이유안</div>
+              <div class="nd nd-member">정예원</div>
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
-  </div>
-
-</div>
+    </div><!-- lv-teams -->
+  </div><!-- tree -->
+</div><!-- chart-wrap -->
 
 <script>
-  function updateHLine() {
-    const row = document.getElementById('teamsRow');
-    const hline = document.getElementById('hline');
-    if (!row || !hline) return;
-    const cols = row.querySelectorAll('.team-col');
-    if (cols.length < 2 || window.innerWidth <= 520) {
-      hline.style.width = '0px';
-      return;
-    }
-    const rowRect = row.getBoundingClientRect();
-    const firstRect = cols[0].getBoundingClientRect();
-    const lastRect  = cols[cols.length - 1].getBoundingClientRect();
-    const firstCenter = firstRect.left + firstRect.width / 2 - rowRect.left;
-    const lastCenter  = lastRect.left  + lastRect.width  / 2 - rowRect.left;
-    hline.style.width = (lastCenter - firstCenter) + 'px';
-  }
-  window.addEventListener('load',   updateHLine);
-  window.addEventListener('resize', updateHLine);
-</script>
+const STROKE = '#cbd5e1', SW = 2, R = 3.5;
 
+function draw() {
+  const cw  = document.getElementById('cw');
+  const svg = document.getElementById('svg');
+  svg.innerHTML = '';
+  svg.setAttribute('width',  cw.scrollWidth);
+  svg.setAttribute('height', cw.scrollHeight);
+  const wr = cw.getBoundingClientRect();
+
+  function rc(id) {
+    const el = document.getElementById(id);
+    if (!el) return null;
+    const b = el.getBoundingClientRect();
+    return { t:b.top-wr.top, b:b.bottom-wr.top, l:b.left-wr.left, r:b.right-wr.left,
+             midX:b.left-wr.left+b.width/2, midY:b.top-wr.top+b.height/2 };
+  }
+  function ln(x1,y1,x2,y2) {
+    const e = document.createElementNS('http://www.w3.org/2000/svg','line');
+    e.setAttribute('x1',x1);e.setAttribute('y1',y1);
+    e.setAttribute('x2',x2);e.setAttribute('y2',y2);
+    e.setAttribute('stroke',STROKE);e.setAttribute('stroke-width',SW);
+    e.setAttribute('stroke-linecap','round');
+    svg.appendChild(e);
+  }
+  function dt(cx,cy,filled=false) {
+    const e = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    e.setAttribute('cx',cx);e.setAttribute('cy',cy);e.setAttribute('r',R);
+    e.setAttribute('stroke',STROKE);e.setAttribute('stroke-width',1.5);
+    e.setAttribute('fill',filled?STROKE:'white');
+    svg.appendChild(e);
+  }
+
+  // chairman → exec + account
+  const ch=rc('chairman'), ex=rc('exec'), ac=rc('account');
+  if(ch&&ex&&ac){
+    const jy=ch.b+(ex.t-ch.b)/2;
+    ln(ch.midX,ch.b,ch.midX,jy); dt(ch.midX,ch.b,true);
+    ln(ex.midX,jy,ac.midX,jy);
+    ln(ex.midX,jy,ex.midX,ex.t); dt(ex.midX,ex.t,false);
+    ln(ac.midX,jy,ac.midX,ac.t); dt(ac.midX,ac.t,false);
+  }
+
+  // exec → 3 teams
+  const nd=rc('n-design'),ne=rc('n-exh'),no=rc('n-onl');
+  if(ex&&nd&&ne&&no){
+    const jy=ex.b+(nd.t-ex.b)/2;
+    ln(ex.midX,ex.b,ex.midX,jy); dt(ex.midX,ex.b,true);
+    ln(nd.midX,jy,no.midX,jy);
+    [nd,ne,no].forEach(n=>{ln(n.midX,jy,n.midX,n.t);dt(n.midX,n.t,false);});
+  }
+
+  // team → leaders
+  function t2l(tid,lids){
+    const tn=rc(tid), ls=lids.map(rc).filter(Boolean);
+    if(!tn||!ls.length) return;
+    const jy=tn.b+(ls[0].t-tn.b)/2;
+    ln(tn.midX,tn.b,tn.midX,jy); dt(tn.midX,tn.b,true);
+    if(ls.length>1) ln(ls[0].midX,jy,ls[ls.length-1].midX,jy);
+    ls.forEach(l=>{ln(l.midX,jy,l.midX,l.t);dt(l.midX,l.t,false);});
+  }
+  t2l('n-design',['l-ds','l-da']);
+  t2l('n-exh',   ['l-es','l-ea']);
+  t2l('n-onl',   ['l-os','l-oa']);
+
+  // leader → members
+  function l2m(lid,mcid){
+    const ld=rc(lid), mc=document.getElementById(mcid);
+    if(!ld||!mc) return;
+    const kids=Array.from(mc.children);
+    if(!kids.length) return;
+    const mrs=kids.map(k=>{const b=k.getBoundingClientRect();
+      return{midX:b.left-wr.left+b.width/2,t:b.top-wr.top};});
+    const jy=ld.b+(mrs[0].t-ld.b)/2;
+    ln(ld.midX,ld.b,ld.midX,jy); dt(ld.midX,ld.b,true);
+    if(mrs.length>1) ln(mrs[0].midX,jy,mrs[mrs.length-1].midX,jy);
+    mrs.forEach(m=>{ln(m.midX,jy,m.midX,m.t);dt(m.midX,m.t,false);});
+  }
+  l2m('l-ds','mc-ds'); l2m('l-da','mc-da');
+  l2m('l-es','mc-es'); l2m('l-ea','mc-ea');
+  l2m('l-os','mc-os'); l2m('l-oa','mc-oa');
+}
+
+window.addEventListener('load',   ()=>setTimeout(draw,150));
+window.addEventListener('resize', ()=>setTimeout(draw,50));
+</script>
 </body>
 </html>
